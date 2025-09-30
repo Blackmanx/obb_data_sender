@@ -1,0 +1,36 @@
+Title = "Enviador de Archivos ADB"
+
+[Label]
+Packages = "Paquetes de terceros:"
+Destination = "Carpeta de destino:"
+SelectedFile = "Seleccionado:"
+
+[Button]
+List = "Listar Paquetes"
+Send = "Enviar Archivo..."
+
+[Dest]
+Files = "/Android/data/[paquete]/files/"
+Obb = "/Android/data/[paquete]/obb/"
+
+[Status]
+Ready = "Listo."
+Listing = "Listando paquetes..."
+Sending = "Enviando {{.file}}..."
+Success = "¡Archivo enviado con éxito!"
+
+[Error]
+NoPackage = "No se ha seleccionado ningún paquete."
+ADBNotFound = "Comando ADB no encontrado. Asegúrate de que esté instalado y en tu PATH."
+DeviceNotFound = "No se encontró ningún dispositivo. Conecta un dispositivo con la depuración USB activada."
+SendFailed = "Error al enviar el archivo."
+ReadingDirectory = "Error al leer directorio: {{.error}}"
+
+[Search]
+Packages = "Buscar paquetes..."
+Files = "Buscar archivos..."
+
+[Dialog.SelectFile]
+Title = "Seleccionar Archivo"
+Open = "Abrir"
+Cancel = "Cancelar"

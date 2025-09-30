@@ -1,0 +1,36 @@
+Title = "ADB File Pusher"
+
+[Label]
+Packages = "Third-party packages:"
+Destination = "Destination folder:"
+SelectedFile = "Selected:"
+
+[Button]
+List = "List Packages"
+Send = "Send File..."
+
+[Dest]
+Files = "/Android/data/[package]/files/"
+Obb = "/Android/data/[package]/obb/"
+
+[Status]
+Ready = "Ready."
+Listing = "Listing packages..."
+Sending = "Sending {{.file}}..."
+Success = "File sent successfully!"
+
+[Error]
+NoPackage = "No package selected."
+ADBNotFound = "ADB command not found. Make sure it is installed and in your PATH."
+DeviceNotFound = "No device found. Connect a device with USB debugging enabled."
+SendFailed = "Failed to send the file."
+ReadingDirectory = "Error reading directory: {{.error}}"
+
+[Search]
+Packages = "Search packages..."
+Files = "Search files..."
+
+[Dialog.SelectFile]
+Title = "Select File"
+Open = "Open"
+Cancel = "Cancel"
