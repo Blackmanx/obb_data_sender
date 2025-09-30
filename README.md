@@ -7,7 +7,7 @@
 
 | **Operating System** | **Version** | **Download Link**                                                                                |
 | -------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------ |
-| **Windows (x64)**    | **v1.0.0**  | [Download](https://github.com/Blackmanx/obb_data_sender/releases/download/v1.0.0/obb_data_sender.exe "null") |
+| **Windows (x64)**    | **v1.0.0**  | [Download](https://github.com/Blackmanx/obb_data_sender/releases/download/v1.0.1/obb_data_sender.exe "null") |
 
 ## Features
 
