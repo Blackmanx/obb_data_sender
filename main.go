@@ -59,8 +59,9 @@ func main() {
 
 	bundle := i18n.NewBundle(language.English)
 	bundle.RegisterUnmarshalFunc("toml", toml.Unmarshal)
-	bundle.LoadMessageFile("i18n/en.toml")
-	bundle.LoadMessageFile("i18n/es.toml")
+	// Load translation files from the embedded filesystem
+	bundle.LoadMessageFileFS(translations, "i18n/en.toml")
+	bundle.LoadMessageFileFS(translations, "i18n/es.toml")
 
 	translator := i18n.NewLocalizer(bundle, language.English.String())
 	appState := &AppState{window: myWindow, translator: translator}
@@ -102,7 +103,7 @@ func main() {
 	}
 
 	searchEntry := widget.NewEntry()
-	searchEntry.SetPlaceHolder(translator.MustLocalize(&i18n.LocalizeConfig{MessageID: "Search.Packages"})) // Localized placeholder
+	searchEntry.SetPlaceHolder(translator.MustLocalize(&i18n.LocalizeConfig{MessageID: "Search.Packages"}))
 	searchEntry.OnChanged = func(text string) {
 		searchText := strings.TrimSpace(strings.ToLower(text))
 
@@ -250,8 +251,8 @@ func openFileDialog(pkg, dest string, win fyne.Window, progress binding.Float, p
 	selectedFile := ""
 	selectedFileBinding := binding.NewString()
 	selectedFileLabel := widget.NewLabelWithData(selectedFileBinding)
-	selectedFileLabel.Wrapping = fyne.TextWrapOff      // Ensures text is on one line
-	selectedFileLabel.Truncation = fyne.TextTruncateEllipsis // Truncate from the end if too long
+	selectedFileLabel.Wrapping = fyne.TextWrapOff
+	selectedFileLabel.Truncation = fyne.TextTruncateEllipsis
 
 	fileList := widget.NewListWithData(visibleFiles,
 		func() fyne.CanvasObject {
@@ -322,7 +323,7 @@ func openFileDialog(pkg, dest string, win fyne.Window, progress binding.Float, p
 	updateFiles(currentPath)
 
 	fileSearchEntry := widget.NewEntry()
-	fileSearchEntry.SetPlaceHolder(state.translator.MustLocalize(&i18n.LocalizeConfig{MessageID: "Search.Files"})) // Localized placeholder
+	fileSearchEntry.SetPlaceHolder(state.translator.MustLocalize(&i18n.LocalizeConfig{MessageID: "Search.Files"}))
 	fileSearchEntry.OnChanged = func(s string) {
 		s = strings.ToLower(s)
 		if s == "" {
@@ -433,4 +434,3 @@ func sendFile(pkg, dest, filePath string, progress binding.Float, progressVisibl
 		progressVisible.Set(false)
 	}()
 }
-
