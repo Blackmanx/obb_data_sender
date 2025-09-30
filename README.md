@@ -8,7 +8,7 @@
 | **Operating System** | **Version** | **Download Link**                                                                                                            |
 | -------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
 | **Windows (x64)**    | **v1.0.1**  | [Download](https://github.com/Blackmanx/obb_data_sender/releases/download/v1.0.1/obb_data_sender.exe "null")                             |
-| **Linux (x64)**      | **v1.0.1**  | [Download](https://github.com/Blackmanx/obb_data_sender/releases/download/v1.0.1/obb_data_sender "null") |
+| **Linux (x64)**      | **v1.0.1**  | [Download](https://github.com/Blackmanx/obb_data_sender/releases/download/v1.0.1/obb_data_sender.tar.xz "null") |
 
 ## Features
 
@@ -30,11 +30,18 @@ sudo apt-get install build-essential libgl1-mesa-dev xorg-dev
 
 ```
 4. **Run the application** **: Execute the **`obb_data_sender.exe` file (on Windows) or the corresponding binary for your OS.
-5. **List Packages** **: Click the "List Packages" button to populate the list with apps from your device.**
-6. **Select an App** **: Click on an application in the list to select it as the destination.**
-7. **Choose Destination** **: Select the target subfolder (**`data/files` or `/obb`).
-8. **Send File** **: Click the "Send File..." button, browse for the file you want to transfer using the custom file picker, and click "Open".**
-9. **The transfer will begin, and the progress bar will show its status.**
+5. (On linux):
+Do:
+```
+tar -xf obb_data_sender.tar.xz
+```
+Then you can find the executable in `/usr/local/bin/obb_data_sender`
+
+6. **List Packages** **: Click the "List Packages" button to populate the list with apps from your device.**
+7. **Select an App** **: Click on an application in the list to select it as the destination.**
+8. **Choose Destination** **: Select the target subfolder (**`data/files` or `/obb`).
+9. **Send File** **: Click the "Send File..." button, browse for the file you want to transfer using the custom file picker, and click "Open".**
+10. **The transfer will begin, and the progress bar will show its status.**
 
 ## Building from Source
 
